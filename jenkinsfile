@@ -11,7 +11,7 @@ pipeline
                 {
                     try
                     {
-                        git 'https://github.com/gassama85/maven.git'
+                       git 'https://github.com/gassama85/skyda_jenkinsfile.git'
                     }
                     catch(Exception e1)
                     {
