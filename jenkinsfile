@@ -11,11 +11,19 @@ pipeline
                 {
                     try
                     {
+<<<<<<< HEAD
                        git 'https://github.com/gassama85/skyda_jenkinsfile.git'
                     }
                     catch(Exception e1)
                     {
                         mail bcc: '', body: 'Jenkins failed to download codes for the skyda project', cc: 'programer.two@skyda.org', from: '', replyTo: '', subject: 'Download_Failure_Skyda_Project', to: 'programer.one@skyda.org'
+=======
+                        git 'https://github.com/gassama85/maven.git'
+                    }
+                    catch(Exception e1)
+                    {
+                        mail bcc: '', body: 'Jenkins failed to download codes for the SKYDA Project', cc: 'gassama85@gmail.com', from: '', replyTo: '', subject: 'Continuous Download failed', to: 'gassama851@outlook.com'
+>>>>>>> 14f7401 (DeclaPL_JenkinsFile)
                         exit(1)
                     }
                 }
@@ -33,7 +41,11 @@ pipeline
                     }
                     catch(Exception e2)
                     {
+<<<<<<< HEAD
                         mail bcc: '', body: 'Jenkins failed to build artifact for the skyda project', cc: 'programer.two@skyda.org', from: '', replyTo: '', subject: 'Build_Failure_Skyda_Project', to: 'programer.one@skyda.org'
+=======
+                        mail bcc: '', body: 'Jenkins failed to build the codes for the SKYDA Project', cc: 'gassama85@gmail.com', from: '', replyTo: '', subject: 'Continuous Build failed', to: 'gassama851@outlook.com'
+>>>>>>> 14f7401 (DeclaPL_JenkinsFile)
                         exit(1)
                     }
                 }
@@ -47,12 +59,21 @@ pipeline
                 {
                     try
                     {
+<<<<<<< HEAD
                         deploy adapters: [tomcat9(credentialsId: '8282fc14-5abb-4587-989d-a20a114d2ed3', path: '', url: 'http://172.31.16.56:8080')], contextPath: 'testapp', war: '**/*.war'
                     }
                     catch(Exception e3)
                     {
                       mail bcc: '', body: 'Jenkins failed to deploy artifact for the skyda project into the QA server', cc: 'manager.two@skyda.org', from: '', replyTo: '', subject: 'QA_Deployment_Failure_Skyda_Project', to: 'manager.one@skyda.org'
                       exit(1)
+=======
+                        deploy adapters: [tomcat9(credentialsId: 'fcf9b542-4c6c-41a7-bce4-558e78a352e9', path: '', url: 'http://54.197.3.250:8080')], contextPath: 'testapp', war: '**/*.war'
+                    }
+                    catch(Exception e3)
+                    {
+                        mail bcc: '', body: 'Jenkins failed to deploy the codes for the SKYDA Project in to the Testing env', cc: 'gassama85@gmail.com', from: '', replyTo: '', subject: 'Continuous Deployment failed', to: 'gassama851@outlook.com'
+                        exit(1)
+>>>>>>> 14f7401 (DeclaPL_JenkinsFile)
                     }
                 }
             }
@@ -66,11 +87,19 @@ pipeline
                     try
                     {
                         git 'https://github.com/gassama85/FunctionalTesting.git'
+<<<<<<< HEAD
                         sh 'java -jar /home/ubuntu/.jenkins/workspace/DeclarativePl_ExceptionHandling/testing.jar'
                     }
                     catch(Exception e4)
                     {
                         mail bcc: '', body: 'Jenkins failed to execute the artifact for the skyda project ', cc: 'testmanager.two@skyda.org', from: '', replyTo: '', subject: 'Testing_Failure_Skyda_Project', to: 'testmanager.one@skyda.org'
+=======
+                sh 'java -jar /home/ubuntu/.jenkins/workspace/DeclarativePipeline1/testing.jar'
+                    }
+                    catch(Exception e4)
+                    {
+                        mail bcc: '', body: 'Jenkins failed to execute codes for the SKYDA Project', cc: 'gassama85@gmail.com', from: '', replyTo: '', subject: 'Continuous Testing failed', to: 'gassama851@outlook.com'
+>>>>>>> 14f7401 (DeclaPL_JenkinsFile)
                         exit(1)
                     }
                 }
@@ -84,12 +113,21 @@ pipeline
                 {
                     try
                     {
+<<<<<<< HEAD
                         deploy adapters: [tomcat9(credentialsId: '8282fc14-5abb-4587-989d-a20a114d2ed3', path: '', url: 'http://172.31.17.201:8080')], contextPath: 'prodapp', war: '**/*.war'
                     }
                     catch(Exception e5)
                     {
                         mail bcc: '', body: 'Jenkins failed to deploy the artifact for the skyda into the ProdServer', cc: 'delivmanager.two@skyda.org', from: '', replyTo: '', subject: 'Delivery_Failure_Skyda_Project', to: 'delivmanager.one@skyda.org'
                         exit(1)
+=======
+                        deploy adapters: [tomcat9(credentialsId: 'fcf9b542-4c6c-41a7-bce4-558e78a352e9', path: '', url: 'http://54.167.56.242:8080')], contextPath: 'prodapp', war: '**/*.war'
+                    }
+                    catch(Exception E5)
+                    {
+                        mail bcc: '', body: 'Jenkins failed to deploy codes for the SKYDA Project into the prod server', cc: 'gassama85@gmail.com', from: '', replyTo: '', subject: 'Continuous Delivery failed', to: 'gassama851@outlook.com'
+                        exit(5)
+>>>>>>> 14f7401 (DeclaPL_JenkinsFile)
                     }
                 }
             }
