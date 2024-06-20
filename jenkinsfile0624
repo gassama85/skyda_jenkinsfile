@@ -7,7 +7,7 @@ pipeline
         {
             steps
             {
-                git 'https://github.com/gassama85/maven.git'
+                git 'https://github.com/gassama85/skyda_jenkinsfile.git'
             }
         }
         stage('continuousBuild')
